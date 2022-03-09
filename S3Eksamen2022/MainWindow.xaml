@@ -1,0 +1,90 @@
+﻿<Window x:Class="S3Eksamen2022.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:S3Eksamen2022"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <TabControl Name="TabControl1">
+                <TabItem Name="AgentTab">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Agents" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DataGrid x:Name="AgentDisplay" ItemsSource="{Binding AgentList}" AutoGenerateColumns="True" ColumnWidth="*" Margin="0,0,0,0">
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="Action"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button x:Name="AddAgentBtn" Content="New" Click="AddAgentBtn_Click"/>
+                                        <Button x:Name="UpdateAgentBtn" Content="Update" Click="UpdateAgentBtn_Click"/>
+                                        <Button x:Name="DeleteAgentBtn" Content="Delete" Click="DeleteAgentBtn_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Name="InformantTab">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Informants" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DataGrid x:Name="InformantDisplay" ItemsSource="{Binding InforList}" AutoGenerateColumns="True" ColumnWidth="*" Margin="0,0,0,0">
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="Action"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button x:Name="AddInformantBtn" Content="New" Click="AddInformantBtn_Click"/>
+                                        <Button x:Name="UpdateInformantBtn" Content="Update" Click="UpdateInformantBtn_Click"/>
+                                        <Button x:Name="DeleteInformantBtn" Content="Delete" Click="DeleteInformantBtn_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Name="TargetsTab">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Targets" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DataGrid x:Name="TargetDisplay" ItemsSource="{Binding TargetList}" AutoGenerateColumns="True" ColumnWidth="*" Margin="0,0,0,0">
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="Action"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button x:Name="AddTargetBtn" Content="New" Click="AddTargetBtn_Click"/>
+                                        <Button x:Name="UpdateTargetBtn" Content="Update" Click="UpdateTargetBtn_Click"/>
+                                        <Button x:Name="DeleteTargetBtn" Content="Delete" Click="DeleteTargetBtn_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>
